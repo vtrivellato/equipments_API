@@ -41,6 +41,7 @@ namespace api.Data.Repositories
                 throw new ArgumentNullException(nameof(alarmeAtuado));
             }
 
+            alarmeAtuado.Status = true;
             alarmeAtuado.CreatedAt = DateTime.Now;
             alarmeAtuado.DataEntrada = DateTime.Now;
 

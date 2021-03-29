@@ -56,7 +56,6 @@ namespace api.Controllers
             try
             {
                 var alarme = _mapper.Map<AlarmeAtuado>(alarmeAtuadoCreateDTO);
-                alarme.Status = true;
 
                 _repository.Create(alarme);
 
@@ -71,7 +70,7 @@ namespace api.Controllers
             }
             catch (System.Exception)
             {
-                return NotFound(new { message = $"The object {alarmeAtuadoCreateDTO.DescricaoAlarme} data was not found."});
+                return NotFound(new { message = $"The object {alarmeAtuadoCreateDTO.DescricaoEquipamento} data was not found."});
             }
         }
 
