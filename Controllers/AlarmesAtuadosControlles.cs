@@ -56,6 +56,7 @@ namespace api.Controllers
             try
             {
                 var alarme = _mapper.Map<AlarmeAtuado>(alarmeAtuadoCreateDTO);
+                alarme.Status = true;
 
                 _repository.Create(alarme);
 

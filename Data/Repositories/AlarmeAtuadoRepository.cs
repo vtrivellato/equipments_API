@@ -42,12 +42,19 @@ namespace api.Data.Repositories
             }
 
             alarmeAtuado.CreatedAt = DateTime.Now;
+            alarmeAtuado.DataEntrada = DateTime.Now;
+
             _context.AlarmesAtuados.Add(alarmeAtuado);
         }
         
-        public void Update(AlarmeAtuado AlarmeAtuado)
+        public void Update(AlarmeAtuado alarmeAtuado)
         {
-            AlarmeAtuado.ModifiedAt = DateTime.Now;
+            alarmeAtuado.ModifiedAt = DateTime.Now;
+
+            if (!alarmeAtuado.Status)
+            {
+                alarmeAtuado.DataSaida = DateTime.Now;
+            }
         }
         
         public void Delete(AlarmeAtuado alarmeAtuado)
